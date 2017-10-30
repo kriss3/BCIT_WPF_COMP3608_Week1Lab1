@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace BCIT_WPF_COMP3608_Week1Lab1
 {
@@ -23,6 +12,48 @@ namespace BCIT_WPF_COMP3608_Week1Lab1
         public MainWindow()
         {
             InitializeComponent();
+            foreach (FontFamily F in Fonts.SystemFontFamilies)
+            {
+                comboBox1.Items.Add(F.ToString());
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var selection = richTextBox1.Selection.GetPropertyValue(FontWeightProperty).ToString();
+
+            if (selection.Equals("Bold"))
+            {
+                richTextBox1.Selection.ApplyPropertyValue(FontWeightProperty, FontWeights.Normal);
+            }
+            else
+            {
+                richTextBox1.Selection.ApplyPropertyValue(FontWeightProperty, FontWeights.Bold);
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var selection = richTextBox1.Selection.GetPropertyValue(FontStyleProperty).ToString();
+   
+            if (selection.Equals("Normal"))
+            {
+                richTextBox1.Selection.ApplyPropertyValue(FontStyleProperty, FontStyles.Italic);
+            }
+            else
+            {
+                richTextBox1.Selection.ApplyPropertyValue(FontStyleProperty, FontStyles.Normal);
+            }
+        }
+
+        private void Slider1_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            richTextBox1.Selection.ApplyPropertyValue(FontSizeProperty, Slider1.Value.ToString());
+        }
+
+        private void comboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            richTextBox1.Selection.ApplyPropertyValue(FontFamilyProperty, new FontFamily(comboBox1.Text));
         }
     }
 }

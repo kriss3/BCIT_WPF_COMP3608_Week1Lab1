@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BCIT_WPF_COMP3608_Week1Lab1"
         mc:Ignorable="d"
-        Title="COMP3608 - Item Controls" Height="350" Width="525" ShowInTaskbar="False">
-    <Grid>
-        
+        Title="COMP3608 - Item Controls" Height="400" Width="600" ShowInTaskbar="False" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,34,3.6,0.4">
+        <RichTextBox x:Name="richTextBox1" HorizontalAlignment="Left" Height="293" Margin="10,33,0,0" VerticalAlignment="Top" Width="570" RenderTransformOrigin="0.5,0.5">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="RichTextBox"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+        <ToolBar Name="toolBar1"
+            Height="29" 
+            Margin="0,-14,1,0" 
+            VerticalAlignment="Top">
+            <Button Click="Button_Click">Bold</Button>
+            <Button Click="Button_Click_1">Italic</Button>
+            <Slider Name="Slider1" Minimum="2" Maximum="72" Width="100" ValueChanged="Slider1_ValueChanged"></Slider>
+            <ComboBox Name="comboBox1" Width="75" RenderTransformOrigin="2.528,6.708" SelectionChanged="comboBox1_SelectionChanged"></ComboBox>
+        </ToolBar>
     </Grid>
 </Window>
