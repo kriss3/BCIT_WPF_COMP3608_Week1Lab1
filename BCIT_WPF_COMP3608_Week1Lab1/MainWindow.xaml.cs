@@ -6,6 +6,8 @@ namespace BCIT_WPF_COMP3608_Week1Lab1
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
+    /// Krzysztof Szczurowski - COMP3608
+    /// Repo: https://github.com/kriss3/BCIT_WPF_COMP3608_Week1Lab1.git
     /// </summary>
     public partial class MainWindow : Window
     {
